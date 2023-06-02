@@ -1,0 +1,11 @@
+﻿
+@section Script {
+    <script src="@Url.Content("~/js/Home/Home.js")" type="text/javascript"></script>
+}
+@Html.AntiForgeryToken()
+<div id="content" class="container clearfix">
+    @RenderPage("~/Views/Shared/_MainTop.cshtml")
+    @RenderPage("~/Views/Shared/_MainContent.cshtml")
+</div>
+
+
