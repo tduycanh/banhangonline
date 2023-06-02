@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\[Work]\Git_Books\Shop\MSys.Model\Data\BooksModel.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\Data\BooksModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -112,3 +112,15 @@ D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Interface\obj\D
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Interface\obj\Debug\MSys.Interface.csproj.CopyComplete
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Interface\obj\Debug\MSys.Interface.dll
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Interface\obj\Debug\MSys.Interface.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\MSys.Interface.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\MSys.Interface.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\MSys.Model.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\EntityFramework.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\MSys.Model.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\MSys.Model.dll.config
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\bin\Debug\EntityFramework.xml
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\obj\Debug\MSys.Interface.csproj.AssemblyReference.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\obj\Debug\MSys.Interface.csproj.CoreCompileInputs.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\obj\Debug\MSys.Interface.csproj.CopyComplete
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\obj\Debug\MSys.Interface.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Interface\obj\Debug\MSys.Interface.pdb

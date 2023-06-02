@@ -214,3 +214,9 @@ D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Core\bin\Debug\
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Core\obj\Debug\MSys.Core.csproj.CoreCompileInputs.cache
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Core\obj\Debug\MSys.Core.dll
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Core\obj\Debug\MSys.Core.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Core\bin\Debug\MSys.Core.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Core\bin\Debug\MSys.Core.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Core\obj\Debug\MSys.Core.csproj.AssemblyReference.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Core\obj\Debug\MSys.Core.csproj.CoreCompileInputs.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Core\obj\Debug\MSys.Core.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Core\obj\Debug\MSys.Core.pdb

@@ -280,3 +280,24 @@ D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.DataAccessLayer
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.csproj.CopyComplete
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.dll
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.DataAccessLayer.dll.config
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.DataAccessLayer.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.DataAccessLayer.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\Dapper.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\EntityFramework.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Core.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Interface.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Model.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Core.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Interface.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Model.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\MSys.Model.dll.config
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\Dapper.xml
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\EntityFramework.xml
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.csproj.AssemblyReference.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.csproj.CopyComplete
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.DataAccessLayer\obj\Debug\MSys.DataAccessLayer.pdb

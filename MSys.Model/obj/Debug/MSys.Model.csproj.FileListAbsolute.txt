@@ -97,3 +97,15 @@ D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Model\obj\Debug
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Model\obj\Debug\MSys.Model.csproj.CopyComplete
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Model\obj\Debug\MSys.Model.dll
 D:\Private\e-learning\Thiet ke phan mem\canh\tap-hoa\taphoa\MSys.Model\obj\Debug\MSys.Model.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\MSys.Model.dll.config
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\MSys.Model.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\MSys.Model.pdb
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\EntityFramework.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\EntityFramework.xml
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\obj\Debug\MSys.Model.csproj.AssemblyReference.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\obj\Debug\MSys.Model.csproj.CoreCompileInputs.cache
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\obj\Debug\MSys.Model.csproj.CopyComplete
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\obj\Debug\MSys.Model.dll
+E:\TKPM\tap hoa\from-git\banhangonline\MSys.Model\obj\Debug\MSys.Model.pdb
