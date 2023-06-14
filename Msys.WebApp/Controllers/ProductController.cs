@@ -81,14 +81,12 @@ namespace Msys.WebApp.Controllers
         [HttpPost]
         public ActionResult ProductListByCategory(int id)
         {
-            //セッションシリアライズ用
             var js = new JavaScriptSerializer();
 
             int pageno = 1;
 
             int pageSize = 20;
             int totalCount = 0;
-            //セッションに保存
             this.CategorySession = id;
 
             //calling stored procedure to get paged data.

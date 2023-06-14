@@ -241,11 +241,6 @@ namespace MSys.WebApp.Controllers
                                         "<p class='list-group-item-text'>Giá bán</p>" +
                                         "<h4 class='list-group-item-heading'><span class='item-price'>" + DecimalUtil.DecimalToMoney(item.price) + "</span></h4>" +
                                     "</div>" +
-                                    //"<div class='list-group-item b-0 b-t'>" +
-                                    //     "<i class='fa fa-calendar fa-2x pull-left ml-r'></i>" +
-                                    //     "<p class='list-group-item-text'>Số lượng hiện có</p>" +
-                                    //     "<h4 class='list-group-item-heading item-stock'>" + item.quantity + "</h4>" +
-                                    // "</div>" +
                                 "</div>" +
                             "</div>" +
                             "<div class='panel-footer'>" +

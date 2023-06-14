@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="taphoadbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="acc" />
+          </Key>
+          <Property Name="acc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="pass" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="url" Type="nvarchar" MaxLength="255" />
+          <Property Name="oder" Type="int" Nullable="false" />
+          <Property Name="parent" Type="int" />
+          <Property Name="type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="255" />
+          <Property Name="data" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="bigint" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="sex" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="bank_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="bank_serial" Type="varchar" MaxLength="20" />
+          <Property Name="enable_account" Type="int" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MadeIn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="enable" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="oder" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu_Childs">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="menu" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="menu" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="enable" Type="int" Nullable="false" />
+          <Property Name="order" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuKind">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuMain">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="topic" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="topic" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="enable" Type="int" Nullable="false" />
+          <Property Name="order" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="status" Type="int" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="active" Type="int" />
+          <Property Name="userid" Type="bigint" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_product" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="id_order" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="bigint" Nullable="false" />
+          <Property Name="product_name" Type="nvarchar(max)" />
+          <Property Name="image_url" Type="nvarchar(max)" />
+          <Property Name="price_import" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="price_export" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="price_percent" Type="int" />
+          <Property Name="price" Type="decimal" Precision="36" Scale="6" StoreGeneratedPattern="Computed" />
+          <Property Name="quantity" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="quantity_import" Type="int" />
+          <Property Name="quantity_export" Type="int" />
+          <Property Name="decriptions" Type="text" />
+          <Property Name="madein" Type="int" />
+          <Property Name="userid" Type="bigint" />
+          <Property Name="expiry_date" Type="datetime" />
+          <Property Name="promotion" Type="int" />
+          <Property Name="promotion_startdate" Type="datetime" />
+          <Property Name="promotion_enddate" Type="datetime" />
+          <Property Name="home_show" Type="int" />
+          <Property Name="product_order" Type="int" />
+          <Property Name="views" Type="bigint" />
+          <Property Name="enable" Type="int" />
+          <Property Name="categories" Type="int" />
+          <Property Name="wholesale_price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="create_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Topics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="enable" Type="int" Nullable="false" />
+          <Property Name="showmain" Type="int" />
+          <Property Name="oder" Type="int" />
+        </EntityType>
+        <Association Name="FK_Products_Comments">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Products1" Type="Self.Products" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Products1">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="taphoadbModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MadeIn" EntityType="Self.MadeIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu_Childs" EntityType="Self.Menu_Childs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuKind" EntityType="Self.MenuKind" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuMain" EntityType="Self.MenuMain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Products_Comments" Association="Self.FK_Products_Comments">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Products1" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="taphoadbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="acc" />
+          </Key>
+          <Property Name="acc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="oder" Type="Int32" Nullable="false" />
+          <Property Name="parent" Type="Int32" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int64" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="sex" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="bank_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bank_serial" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="enable_account" Type="Int32" />
+          <Property Name="update_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MadeIn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="enable" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="oder" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu_Childs">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="menu" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="menu" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="enable" Type="Int32" Nullable="false" />
+          <Property Name="order" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuKind">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuMain">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="topic" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="topic" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="enable" Type="Int32" Nullable="false" />
+          <Property Name="order" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="active" Type="Int32" />
+          <Property Name="userid" Type="Int64" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_product" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_order" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int64" Nullable="false" />
+          <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="price_import" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="price_export" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="price_percent" Type="Int32" />
+          <Property Name="price" Type="Decimal" Precision="36" Scale="6" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="quantity" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="quantity_import" Type="Int32" />
+          <Property Name="quantity_export" Type="Int32" />
+          <Property Name="decriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="madein" Type="Int32" />
+          <Property Name="userid" Type="Int64" />
+          <Property Name="expiry_date" Type="DateTime" Precision="3" />
+          <Property Name="promotion" Type="Int32" />
+          <Property Name="promotion_startdate" Type="DateTime" Precision="3" />
+          <Property Name="promotion_enddate" Type="DateTime" Precision="3" />
+          <Property Name="home_show" Type="Int32" />
+          <Property Name="product_order" Type="Int32" />
+          <Property Name="views" Type="Int64" />
+          <Property Name="enable" Type="Int32" />
+          <Property Name="categories" Type="Int32" />
+          <Property Name="wholesale_price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Products1" Relationship="Self.FK_Products_Comments" FromRole="Products" ToRole="Products1" />
+          <NavigationProperty Name="Product1" Relationship="Self.FK_Products_Comments" FromRole="Products1" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="enable" Type="Int32" Nullable="false" />
+          <Property Name="showmain" Type="Int32" />
+          <Property Name="oder" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Products_Comments">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="Products1" Type="Self.Product" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Products1">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="taphoadbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="MadeIns" EntityType="Self.MadeIn" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="Menu_Childs" EntityType="Self.Menu_Childs" />
+          <EntitySet Name="MenuKinds" EntityType="Self.MenuKind" />
+          <EntitySet Name="MenuMains" EntityType="Self.MenuMain" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Topics" EntityType="Self.Topic" />
+          <AssociationSet Name="FK_Products_Comments" Association="Self.FK_Products_Comments">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Products1" EntitySet="Products" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="taphoadbModelStoreContainer" CdmEntityContainer="taphoadbEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="taphoadbModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="acc" ColumnName="acc" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="taphoadbModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="oder" ColumnName="oder" />
+                <ScalarProperty Name="parent" ColumnName="parent" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="taphoadbModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="taphoadbModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+                <ScalarProperty Name="bank_serial" ColumnName="bank_serial" />
+                <ScalarProperty Name="enable_account" ColumnName="enable_account" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MadeIns">
+            <EntityTypeMapping TypeName="taphoadbModel.MadeIn">
+              <MappingFragment StoreEntitySet="MadeIn">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="enable" ColumnName="enable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="taphoadbModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="oder" ColumnName="oder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu_Childs">
+            <EntityTypeMapping TypeName="taphoadbModel.Menu_Childs">
+              <MappingFragment StoreEntitySet="Menu_Childs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="menu" ColumnName="menu" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="enable" ColumnName="enable" />
+                <ScalarProperty Name="order" ColumnName="order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuKinds">
+            <EntityTypeMapping TypeName="taphoadbModel.MenuKind">
+              <MappingFragment StoreEntitySet="MenuKind">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuMains">
+            <EntityTypeMapping TypeName="taphoadbModel.MenuMain">
+              <MappingFragment StoreEntitySet="MenuMain">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="enable" ColumnName="enable" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="taphoadbModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="taphoadbModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_product" ColumnName="id_product" />
+                <ScalarProperty Name="id_order" ColumnName="id_order" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="taphoadbModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="image_url" ColumnName="image_url" />
+                <ScalarProperty Name="price_import" ColumnName="price_import" />
+                <ScalarProperty Name="price_export" ColumnName="price_export" />
+                <ScalarProperty Name="price_percent" ColumnName="price_percent" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="quantity_import" ColumnName="quantity_import" />
+                <ScalarProperty Name="quantity_export" ColumnName="quantity_export" />
+                <ScalarProperty Name="decriptions" ColumnName="decriptions" />
+                <ScalarProperty Name="madein" ColumnName="madein" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+                <ScalarProperty Name="promotion" ColumnName="promotion" />
+                <ScalarProperty Name="promotion_startdate" ColumnName="promotion_startdate" />
+                <ScalarProperty Name="promotion_enddate" ColumnName="promotion_enddate" />
+                <ScalarProperty Name="home_show" ColumnName="home_show" />
+                <ScalarProperty Name="product_order" ColumnName="product_order" />
+                <ScalarProperty Name="views" ColumnName="views" />
+                <ScalarProperty Name="enable" ColumnName="enable" />
+                <ScalarProperty Name="categories" ColumnName="categories" />
+                <ScalarProperty Name="wholesale_price" ColumnName="wholesale_price" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Topics">
+            <EntityTypeMapping TypeName="taphoadbModel.Topic">
+              <MappingFragment StoreEntitySet="Topics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="enable" ColumnName="enable" />
+                <ScalarProperty Name="showmain" ColumnName="showmain" />
+                <ScalarProperty Name="oder" ColumnName="oder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
